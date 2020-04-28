@@ -5,7 +5,6 @@ import "fmt"
 func main(){
 	angka := [30] int {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
 
-	var prime [] int
 	var even [] int
 	var odd [] int
 
@@ -18,12 +17,20 @@ func main(){
 		}
 	}
 
+	var prime [] int
 
-	for y := 0; y < (angka[19]); y++ {
-		if angka[y] % 2 != 0 {
+	for y := 1; y < (angka[19]); y++ {
+		z := 0
+
+		for a := 1; a < len(angka); a++ {
+			if angka[y] % a == 0 {
+				z++
+			}
+		}
+		if z == 2 && y > 0 {
 			prime = append(prime, angka[y])
 		}
-	} 
+	}
 	
 
 	fmt.Println("Bilangan Ganjil:", odd, "\nJumlah bilangan Ganjil:", len(odd))
