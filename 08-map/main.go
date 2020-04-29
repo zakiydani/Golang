@@ -11,10 +11,17 @@ type Product struct {
 func main() {
 	var Item = make(map[int]Product)
 
-	Item[] = Product{Name:"Masker", Harga:10000, Stock:9}
-	Item[] = Product{Name:"Sarung Tangan", Harga:20000, Stock:5}
-	Item[] = Product{Name:"Hand Sanitizer", Harga:25000, Stock:8}
-	Item[] = Product{Name:"Sabun", Harga:3000, Stock:30}
-	Item[] = Product{Name:"Shampoo", Harga:17000, Stock:50}
+	Item[0] = Product{Name:"Masker", Price:10000, Stock:9}
+	Item[1] = Product{Name:"Sarung Tangan", Price:20000, Stock:5}
+	Item[2] = Product{Name:"Hand Sanitizer", Price:25000, Stock:8}
+	Item[3] = Product{Name:"Sabun", Price:3000, Stock:30}
+	Item[4] = Product{Name:"Shampoo", Price:17000, Stock:50}
 
+	fmt.Println("Barang yang memiliki Stok di bawah 10 pcs adalah :")
+	
+	for _, qty := range Item {
+		if qty.Stock < 10 {
+			fmt.Println(">", qty.Name, qty.Stock)
+		}
+	}
 }
